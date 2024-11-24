@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Jaringan Cokro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <h1>PT Jaringan Cokro</h1>
+    <div class="button-container">
+        <button onclick="showSection('keuangan')">Keuangan</button>
+        <button onclick="showSection('logistik')">Logistik</button>
+        <button onclick="showSection('penjualan')">Penjualan</button>
+    </div>
+    <section id="keuangan" class="section">
+        <h2>Keuangan</h2>
+        <form id="keuanganForm">
+            <label>Tanggal: <input type="date" id="tanggalKeuangan"></label>
+            <label>Keperluan: <input type="text" id="keperluan"></label>
+            <label>Jumlah: <input type="number" id="jumlahKeuangan"></label>
+            <label>Debit: <input type="number" id="debit"></label>
+            <label>Kredit: <input type="number" id="kredit"></label>
+            <button type="button" onclick="addKeuangan()">Tambah</button>
+        </form>
+        <table id="keuanganTable">
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Keperluan</th>
+                    <th>Jumlah</th>
+                    <th>Debit</th>
+                    <th>Kredit</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="exportKeuangan()">Export to Excel</button>
+    </section>
+
+    <section id="logistik" class="section">
+        <h2>Logistik</h2>
+        <form id="logistikForm">
+            <label>Nama Item: <input type="text" id="namaItem"></label>
+            <label>Stok: <input type="number" id="stok"></label>
+            <label>Masuk: <input type="number" id="masuk"></label>
+            <label>Keluar: <input type="number" id="keluar"></label>
+            <button type="button" onclick="addLogistik()">Tambah</button>
+        </form>
+        <table id="logistikTable">
+            <thead>
+                <tr>
+                    <th>Nama Item</th>
+                    <th>Stok</th>
+                    <th>Masuk</th>
+                    <th>Keluar</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="exportLogistik()">Export to Excel</button>
+    </section>
+
+    <section id="penjualan" class="section">
+        <h2>Penjualan</h2>
+        <form id="penjualanForm">
+            <label>Tanggal: <input type="date" id="tanggalPenjualan"></label>
+            <label>Nama Item: <input type="text" id="namaItemPenjualan"></label>
+            <label>Tujuan: <input type="text" id="tujuan"></label>
+            <label>Jumlah Penjualan: <input type="number" id="jumlahPenjualan"></label>
+            <label>Keterangan: <input type="text" id="keterangan"></label>
+            <button type="button" onclick="addPenjualan()">Tambah</button>
+        </form>
+        <table id="penjualanTable">
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Nama Item</th>
+                    <th>Tujuan</th>
+                    <th>Jumlah Penjualan</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="exportPenjualan()">Export to Excel</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
